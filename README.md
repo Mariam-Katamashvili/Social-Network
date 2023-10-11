@@ -23,11 +23,6 @@ This is a social networking web application developed using the Spring framework
 - The timeline will display posts from the user and the users they follow.
 - Users can search for other users to follow and see their posts in their timeline.
 
-### Notifications
-
-- Users can receive notifications for new followers, likes, comments, and mentions in posts.
-- Real-time notifications can be implemented using WebSocket technology for an enhanced user experience.
-
 
 ## Getting Started
 
