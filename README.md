@@ -27,8 +27,6 @@ This is a social networking web application developed using the Spring framework
 
 ### ER Diagram of the Database
 
-![image](https://github.com/Mariam-Katamashvili/SocialNetwork/assets/127763064/2e0dc3ef-62e8-4bf7-a5dd-8d31cbb8cec6)
-
 This is the ER Diagram of the Project. We have following entities: User, Post, UserProfile, Following, Share.
 
 - The "User" entity represents individual users of the social media platform. It stores their personal information, including their names, email, date of birth, and profile picture.
@@ -37,6 +35,7 @@ This is the ER Diagram of the Project. We have following entities: User, Post, U
 - The "UserProfile" entity stores additional information about a user's profile. This may include a user's bio or description. It is linked to the respective user using the username as a foreign key.
 - The "Following" entity represents the relationship between users on the social network platform. It records who is following whom and when this relationship was established.
 
+![image](https://github.com/Mariam-Katamashvili/SocialNetwork/assets/127763064/2e0dc3ef-62e8-4bf7-a5dd-8d31cbb8cec6)
 
 ## Getting Started
 
