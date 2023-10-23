@@ -19,9 +19,13 @@ This is a social networking web application developed using the Spring framework
 ### Posting and Timeline
 
 - Users can create text-based posts that are shared with their followers.
-- Posts will include text content, timestamps, and an option for users to like and comment on them.
-- The timeline will display posts from the user and the users they follow.
+- Posts will include text content and timestamps.
+- The timeline will display posts from the users they follow.
 - Users can search for other users to follow and see their posts in their timeline.
+
+## ER Diagram of the Database
+
+![image](https://github.com/Mariam-Katamashvili/SocialNetwork/assets/127763064/47c5e800-b278-4ea9-884c-f64d995b9a00)
 
 
 ## Getting Started
