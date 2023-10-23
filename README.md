@@ -23,8 +23,9 @@ This is a social networking web application developed using the Spring framework
 - The timeline will display posts from the users they follow.
 - Users can search for other users to follow and see their posts in their timeline.
 
-## ER Diagram of the Database
+## How the Project Works
 
+### ER Diagram of the Database
 ![image](https://github.com/Mariam-Katamashvili/SocialNetwork/assets/127763064/47c5e800-b278-4ea9-884c-f64d995b9a00)
 
 
