@@ -22,6 +22,7 @@ public class ProfileController {
         User user = userRepo.findByUserId(userId);
         model.addAttribute("firstName", user.getFirstName());
         model.addAttribute("lastName", user.getLastName());
+        model.addAttribute("bio", user.getBio());
         return "profileView";
     }
 }

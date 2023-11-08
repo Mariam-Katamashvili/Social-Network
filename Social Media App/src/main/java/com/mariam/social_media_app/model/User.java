@@ -33,16 +33,20 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "bio")
+    private String bio;
+
     @OneToMany(mappedBy = "user")
     private Set<Post> postSet;
 
-    public User(int userId, String firstName, String middleName, String lastName, String email, String password, Set<Post> postSet) {
+    public User(int userId, String firstName, String middleName, String lastName, String email, String password, String bio, Set<Post> postSet) {
         this.userId = userId;
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.bio = bio;
         this.postSet = postSet;
     }
 
@@ -103,5 +107,13 @@ public class User {
 
     public void setPostSet(Set<Post> postSet) {
         this.postSet = postSet;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 }
