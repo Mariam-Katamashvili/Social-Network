@@ -26,19 +26,6 @@
             font-weight: bold;
             text-align: center;
         }
-        .bio {
-            text-align: center;
-            margin: 30px;
-        }
-        .edit-button {
-            background: #3A64A8;
-            border: none;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 25px;
-            font-size: 16px;
-            cursor: pointer;
-        }
         .post-list {
             background: #E4DCF5;
             max-width: 700px;
@@ -63,7 +50,9 @@
             position: absolute; /* Position the link absolutely */
             left: 20px; /* Adjust the left position as needed */
             top: 60px;
+
         }
+
     </style>
 </head>
 <body>
@@ -73,9 +62,9 @@
         <span th:text="${firstName}"></span>
         <span th:text="${lastName}"></span>
     </div>
-    <div class="bio" th:text="${bio}"></div>
-    <button class="edit-button">Edit or Add Bio</button>
+
 </div>
+
 
 <div class="post-list">
     <h2>Your Posts</h2>
@@ -90,6 +79,7 @@
         <p>More post content here.</p>
     </div>
 </div>
+
 
 </body>
 </html>
