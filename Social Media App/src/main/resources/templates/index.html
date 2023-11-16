@@ -60,6 +60,7 @@
         .login-form .group .input, .login-form .group .button {
             border: none;
             padding: 15px 0px;
+            padding-left: 10px;
             border-radius: 25px;
             background: rgba(255, 255, 255, .2);
         }
@@ -137,7 +138,6 @@
     <div class="right-box">
         <div class="login-html" style="text-align: center;">
             <span style="color: #3A64A8; font-size: 50px; display: block; margin-top: 20px; margin-bottom: 50px;">Sign In</span>
-
             <div class="login-form">
                 <form action="/login" method="post">
                     <div th:if="${error}" style="color: #402661;">
@@ -145,17 +145,17 @@
                     </div>
 
                     <div class="group">
-                        <input id="email" name="email" type="email" class="input" placeholder="     Email" required>
+                        <input id="email" name="email" type="email" class="input" placeholder="Email" required th:value="${email}">
                     </div>
                     <div class="group">
-                        <input type="password" id="password" name="password" class="input" data-type="password" placeholder="     Password" required>
+                        <input type="password" id="password" name="password" class="input" data-type="password" placeholder="Password" required>
                     </div>
                     <div class="group">
                         <button type="submit" class="button">Sign In</button>
                     </div>
                 </form>
                 <div class="group">
-                    <center> <p>New user? <a href="/register" style="text-decoration: none; color: #3A64A8">Sign Up</a> </center>
+                    <center><p>New user? <a href="/register" style="text-decoration: none; color: #3A64A8">Sign Up</a></p></center>
                 </div>
                 <div class="hr"></div>
             </div>

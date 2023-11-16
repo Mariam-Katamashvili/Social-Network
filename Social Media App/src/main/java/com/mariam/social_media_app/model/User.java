@@ -26,7 +26,7 @@ public class User {
     private String lastName;
 
     @NotNull
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
 
     @NotNull
@@ -50,6 +50,12 @@ public class User {
         this.postSet = postSet;
     }
 
+    public User (String firstName, String lastName, String email, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+    }
     public User() {
     }
 

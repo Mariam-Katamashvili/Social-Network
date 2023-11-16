@@ -33,6 +33,7 @@ public class LoginController {
             return "index";
         } else if (!user.getPassword().equals(password)) {
             model.addAttribute("error", "Password is incorrect.");
+            model.addAttribute("email", email);
             return "index";
         }
         return "redirect:/timeline/" + user.getUserId();
