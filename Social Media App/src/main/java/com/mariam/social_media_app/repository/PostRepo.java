@@ -10,5 +10,6 @@ import java.util.List;
 @Repository
 public interface PostRepo extends CrudRepository<Post, Integer> {
     List<Post> findByUserOrderByDateDesc(User user);
+
     List<Post> findAllByOrderByDateDesc();
 }
