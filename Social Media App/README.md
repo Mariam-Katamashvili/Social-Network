@@ -1,41 +1,46 @@
 # Social Network
 
-This is a social networking web application developed using the Spring framework and MySQL as the database system. The primary goal of this project is to provide a platform for users to register, follow other users, and create and share text-based posts. Users will have personalized timelines that display their posts and the posts of users they follow.
+This is a social networking web application developed using the Spring framework and MySQL as the database system. The primary goal of this project is to provide a platform for users to register and create and share text-based posts. Users will have personalized timelines that display their posts and the posts of other users.
 
 ## Features
 
 ### User Registration and Authentication
 
-- Users can create an account by providing a username, email, and password.
+- Users can create an account by providing their name, email, and password.
 - Passwords are securely hashed using bcrypt and stored in the database.
 - Users can log in securely using their credentials.
-- Password reset and email confirmation functionality is also added for improved user experience.
 
 ### Profile Management
 
-- Users can edit their profile information, including their profile picture and bio.
-- User profiles will display their followers, followed users, and the posts they've shared.
+- User profiles will display the posts they've shared.
 
 ### Posting and Timeline
 
-- Users can create text-based posts that are shared with their followers.
-- Posts will include text content and timestamps.
-- The timeline will display posts from the users they follow.
-- Users can search for other users to follow and see their posts in their timeline.
+- Users can create text-based posts that are shared with other users.
+- Posts will include text content and user's name.
+- Users can search for other users to see their posts on their timeline.
 
-## How the Project Works
+[//]: # (## How the Project Works)
 
-### ER Diagram of the Database
+[//]: # ()
+[//]: # (### ER Diagram of the Database)
 
-This is the ER Diagram of the Project. We have following entities: User, Post, UserProfile, Following, Share.
+[//]: # ()
+[//]: # (This is the ER Diagram of the Project. We have following entities: User, Post, UserProfile, Following, Share.)
 
-- The "User" entity represents individual users of the social media platform. It stores their personal information, including their names, email, date of birth, and profile picture.
-- The "Post" entity represents the posts or content shared by users on the platform. Each post is associated with a specific user and contains textual content.
-- The "Shares" entity represents instances where users share or repost content created by other users. It records the relationship between the sharing user, the post being shared, and the time of the share.
-- The "UserProfile" entity stores additional information about a user's profile. This may include a user's bio or description. It is linked to the respective user using the username as a foreign key.
-- The "Following" entity represents the relationship between users on the social network platform. It records who is following whom and when this relationship was established.
+[//]: # ()
+[//]: # (- The "User" entity represents individual users of the social media platform. It stores their personal information, including their names, email, date of birth, and profile picture.)
 
-![image](https://github.com/Mariam-Katamashvili/SocialNetwork/assets/127763064/2e0dc3ef-62e8-4bf7-a5dd-8d31cbb8cec6)
+[//]: # (- The "Post" entity represents the posts or content shared by users on the platform. Each post is associated with a specific user and contains textual content.)
+
+[//]: # (- The "Shares" entity represents instances where users share or repost content created by other users. It records the relationship between the sharing user, the post being shared, and the time of the share.)
+
+[//]: # (- The "UserProfile" entity stores additional information about a user's profile. This may include a user's bio or description. It is linked to the respective user using the username as a foreign key.)
+
+[//]: # (- The "Following" entity represents the relationship between users on the social network platform. It records who is following whom and when this relationship was established.)
+
+[//]: # ()
+[//]: # (![image]&#40;https://github.com/Mariam-Katamashvili/SocialNetwork/assets/127763064/2e0dc3ef-62e8-4bf7-a5dd-8d31cbb8cec6&#41;)
 
 ## Getting Started
 
