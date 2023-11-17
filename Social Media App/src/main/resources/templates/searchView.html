@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>FACTGRAM | Search Results</title>
+    <style>
+        body {
+            margin: 0;
+            color: #6a6f8c;
+            background: #e9e4f5; /* Match the background color of the timeline */
+            font: 600 16px/18px 'Open Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            font-size: 30px; /* Increase the text size */
+            color: #3A64A8; /* Match the text color of the timeline */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3A64A8; /* Match the link color of the timeline */
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-
+<h2>Search Results:</h2>
+<ul>
+    <li th:each="user : ${searchResults}">
+        <a th:href="@{/profile/{userId}(userId=${user.userId})}" th:text="${user.firstName + ' ' + user.lastName}"></a>
+    </li>
+</ul>
 </body>
 </html>

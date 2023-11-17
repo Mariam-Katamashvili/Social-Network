@@ -41,6 +41,14 @@
             padding: 10px;
             margin: 10px 0;
         }
+        .post .name {
+            font-weight: bold;
+            color: #3A64A8;
+            margin-bottom: 5px;
+        }
+        .post .content {
+            color: #3A64A8;
+        }
         .factgram-link {
             color: #3A64A8;
             text-decoration: none;
@@ -52,12 +60,12 @@
         }
         .write-post-box textarea {
             background: #3A64A8;
-            width: 100%; /* Increase width to 100% */
-            height: 150px; /* Increase height */
+            width: 100%;
+            height: 150px;
             border: none;
-            padding: 15px; /* Increase padding */
+            padding: 15px;
             border-radius: 9px;
-            margin-top: 20px; /* Add space above the text input box */
+            margin-top: 20px;
         }
         .write-post-box button {
             background: linear-gradient(to bottom, #402661, #3A64A8);
@@ -75,11 +83,17 @@
             box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
         }
         .write-post-box textarea::placeholder {
-            color: #fff; /* Placeholder text color */
-            opacity: 1; /* Optional: adjust the opacity as needed */
+            color: #fff;
+            opacity: 1;
         }
         .header + .write-post-box {
             margin-top: 10px;
+        }
+        post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
         }
         a {
             text-decoration: none;
@@ -108,8 +122,9 @@
 <div class="post-list">
     <h2>Your Posts</h2>
     <div th:each="post : ${posts}" class="post">
-        <strong th:text="${post.user.firstName + ' ' + post.user.lastName}"></strong>
-        <p th:text="${post.text}"></p>
+        <div class="name" th:text="${post.user.firstName + ' ' + post.user.lastName}"></div>
+        <hr>
+        <div class="content" th:text="${post.text}"></div>
     </div>
     <div th:if="${#lists.isEmpty(posts)}">
         <p>You have not made any posts yet.</p>
