@@ -46,13 +46,45 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 30px;
-            /*float: left;*/
-            position: absolute; /* Position the link absolutely */
-            left: 20px; /* Adjust the left position as needed */
+            position: absolute;
+            left: 20px;
             top: 60px;
-
         }
-
+        .write-post-box textarea {
+            background: #3A64A8;
+            width: 100%; /* Increase width to 100% */
+            height: 150px; /* Increase height */
+            border: none;
+            padding: 15px; /* Increase padding */
+            border-radius: 9px;
+            margin-top: 20px; /* Add space above the text input box */
+        }
+        .write-post-box button {
+            background: linear-gradient(to bottom, #402661, #3A64A8);
+            border: none;
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 25px;
+            font-size: 20px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, box-shadow 0.3s;
+            margin-top: 10px;
+        }
+        .write-post-box button:hover {
+            background: #3A64A8;
+            box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+        }
+        .write-post-box textarea::placeholder {
+            color: #fff; /* Placeholder text color */
+            opacity: 1; /* Optional: adjust the opacity as needed */
+        }
+        .header + .write-post-box {
+            margin-top: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -62,24 +94,26 @@
         <span th:text="${firstName}"></span>
         <span th:text="${lastName}"></span>
     </div>
-
 </div>
-
+<div th:if="${error}" class="error-message">
+    <p th:text="${error}"></p>
+</div>
+<div class="write-post-box">
+    <form th:action="@{/profile/{userId}(userId=${userId})}" method="post">
+        <textarea name="content" placeholder="Share your thoughts or fun facts!" rows="4" style="width: 100%;"></textarea>
+        <button type="submit">POST</button>
+    </form>
+</div>
 
 <div class="post-list">
     <h2>Your Posts</h2>
-    <div class="post">
-        <!-- Replace with dynamic content for user's posts -->
-        <h3>Post Title</h3>
-        <p>Post content goes here.</p>
+    <div th:each="post : ${posts}" class="post">
+        <strong th:text="${post.user.firstName + ' ' + post.user.lastName}"></strong>
+        <p th:text="${post.text}"></p>
     </div>
-    <div class="post">
-        <!-- Replace with dynamic content for user's posts -->
-        <h3>Another Post Title</h3>
-        <p>More post content here.</p>
+    <div th:if="${#lists.isEmpty(posts)}">
+        <p>You have not made any posts yet.</p>
     </div>
 </div>
-
-
 </body>
 </html>

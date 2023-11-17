@@ -44,7 +44,6 @@ public class RegisterController {
             User newUser = new User(firstName, lastName, email, password);
             userRepo.save(newUser);
         } catch (DataIntegrityViolationException e) {
-            // Catch exception if email already exists
             model.addAttribute("error", "Email already exists.");
             model.addAttribute("firstName", firstName);
             model.addAttribute("lastName", lastName);

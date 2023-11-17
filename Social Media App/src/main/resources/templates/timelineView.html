@@ -42,78 +42,47 @@
             display: flex;
             align-items: center;
         }
-
-        .user-info .profile-pic {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #ccc; /* Placeholder background color */
-            margin-left: 10px;
-        }
-
         .container {
             display: flex;
         }
-
         .post-container {
             flex: 2;
             overflow-y: scroll;
             padding: 20px;
         }
-
-        .sidebar {
-            flex: 1;
-            background-color: #f0f2f5;
+        .post-list {
+            max-width: 1300px; /* Set max-width for the post list container */
+            margin: 0 auto; /* Center the container */
             padding: 20px;
-        }
-
-        .post {
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 9px;
-        }
-
-        .write-post-box {
-            background: #fff; /* Change to white background */
-            border: 1px solid #ddd; /* Add a border similar to post box */
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 9px; /* Apply border radius */
-        }
-
-        .write-post-box textarea {
             background: #E4DCF5;
-            width: 98%;
-            border: none;
-            padding: 10px;
             border-radius: 9px;
         }
-
-        .write-post-box button {
-            background: linear-gradient(to bottom, #402661, #3A64A8);
+        .post {
+            background: #fff;
+            border-radius: 9px;
+            padding: 10px;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better look */
+        }
+        .post strong {
+            display: block; /* Make the name display on its own line */
+            margin-bottom: 5px; /* Add some space below the name */
+        }
+        .post hr {
             border: none;
-            color: #fff;
-            padding: 15px 20px;
-            border-radius: 25px;
-            font-size: 20px;
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-            transition: background 0.3s, box-shadow 0.3s;
-            margin-top: 10px;
+            height: 1px;
+            background-color: #ddd; /* Subtle line color */
+            margin: 5px 0; /* Space above and below the line */
+        }
+        .post p {
+            font-size: 1.2em; /* Increase the size of the post text */
+            color: #333; /* Darker color for better readability */
+            margin-top: 5px; /* Space above the post text */
         }
 
-        .write-post-box button:hover {
-            background: #3A64A8;
-            box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
-        }
-
-        /* Remove underline for hyperlinks */
         a {
             text-decoration: none;
         }
-
-        /* Make the name text white */
         a {
             color: white;
         }
@@ -132,7 +101,16 @@
         </a>
     </div>
 </header>
-
-<!-- Rest of your timeline content goes here -->
+<div class="post-list">
+    <h2>Here is your daily dose of fun facts! Enjoy!</h2>
+    <div th:each="post : ${posts}" class="post">
+        <strong th:text="${post.user.firstName + ' ' + post.user.lastName}"></strong>
+        <hr>
+        <p th:text="${post.text}"></p>
+    </div>
+    <div th:if="${#lists.isEmpty(posts)}">
+        <p>No posts to display.</p>
+    </div>
+</div>
 </body>
 </html>
