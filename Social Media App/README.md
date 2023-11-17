@@ -1,13 +1,12 @@
 # Social Network
 
-This is a social networking web application developed using the Spring framework and MySQL as the database system. The primary goal of this project is to provide a platform for users to register and create and share text-based posts. Users will have personalized timelines that display their posts and the posts of other users.
+This is a social networking web application developed using the Spring framework and MySQL as the database system. The primary goal of this project is to provide a platform for users to register, create and share text-based posts. Users will have personalized timelines that displays their posts and the posts of other users.
 
 ## Features
 
 ### User Registration and Authentication
 
 - Users can create an account by providing their name, email, and password.
-- Passwords are securely hashed using bcrypt and stored in the database.
 - Users can log in securely using their credentials.
 
 ### Profile Management
